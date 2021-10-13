@@ -51,7 +51,7 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '4',
+        
         name: 'Nike Slim Pant',
         category: 'Pants',
         image: '/images/p4.jpg',
