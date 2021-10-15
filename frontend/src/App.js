@@ -9,6 +9,8 @@ import CartScreen from "./screens/CartScreen";
 import RegisterScreen from './screens/RegisterScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import LoadingBox from "./components/LoadingBox";
 
 
 
@@ -24,15 +26,25 @@ function App() {
   return (
     <BrowserRouter>
       <div className="grid-container">
-        <header className="row">
+        <header className="row header">
           <div>
             <Link className="brand" to="/">
-              amazona
+            <img
+                      src='/images/logo.png'
+                      alt="logo"
+                      className="logo"
+                      
+                    ></img>
             </Link>
           </div>
-          <div>
+          <div className="row">
             <Link to="/cart">
-              Cart
+            <img
+                      src='/images/shopping.png'
+                      alt="logo"
+                      className="small1"
+                      
+                    ></img>
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}
@@ -62,9 +74,10 @@ function App() {
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/shipping" component={ShippingAddressScreen}></Route>
           <Route path="/payment" component={PaymentMethodScreen}></Route>
+          <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
-        <footer className="row center">All right reserved</footer>
+        <footer className="row center footer">All right reserved</footer>
       </div>
     </BrowserRouter>
   );
